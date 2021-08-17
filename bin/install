@@ -41,6 +41,9 @@ install_default_go_pkgs() {
     if [ -z "$name" ]; then continue ; fi
 
     echo -ne "\nInstalling \033[33m${name}\033[39m go pkg... " >&2
+
+    echo -e "\n\nDEBUG ASDF_INSTALL_VERSION --> $ASDF_INSTALL_VERSION \n\n"
+    
     GOROOT="$ASDF_INSTALL_PATH/go" \
         GOPATH="$ASDF_INSTALL_PATH/packages" \
         PATH="$go_path:$PATH" \
